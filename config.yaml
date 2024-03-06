@@ -1,0 +1,46 @@
+# Path to images it can be ./ if the images are on the same directory of the executable or ./<directory name> if it is on
+# subdirectory of the executable or <drive letter>:/<directory>/<subdirectory>/.../<subdirectory>/ to absolute path
+path: C:/Users/dnune/OneDrive/Documentos/VerLab/3D Reconstruction/Images/
+# The name of the image sequence without number sequence or extension
+filename: reconstruct_calib
+#filename: reconstruct
+# Numerical sequence to image names. As an example if you want to save the images as calibimg1, calibimg2, ...
+#sequence: [40,186,523,602,727,772,874,950,1030,1280,1319,1422,1440,1585,1657,1795,1924,2187,2271,2295,2379,2398,2444,2537,2587,2622,2628,2751,2828,2859]
+sequence: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+#Extension to saved images
+extension: png
+# The total time to simulation
+simulation time: 11.0
+# The name of the vision sensor at CoppeliaSim
+#vision sensor names: [./Vision_sensor_center, ./Vision_sensor_left, ./Vision_sensor_right]
+vision sensor names: ./Quadcopter/Vision_sensor
+# The name of the robot that is with the camera
+quadcopter name: ./target
+# The quadcopter handle to get quadcotper position
+quadcopter base: ./base
+#Joint used to move the target in x y axis
+target joint xy: ./Revolute_joint_xy
+#Joint used to move the target in x y-axis
+target joint zy: ./Revolute_joint_zy
+# If the robot needs a stopped time to stabilize the image before take the pictures
+time to stabilize: 10.0
+# The displacement that the robot will do before the simulation stops
+max displacement: 0.5
+# The total maximum time of the simulation
+total simulation time: 20
+# The unit displacement of the robot in three-dimensional coordinates. You can not put the brackets [] symbol
+displacement: [0.0,0.1,-0.05]
+# The height of the checkerboard black squares corners. The height variable is the number of inner square corners of the calibration target
+height: 5
+# The width of the checkerboard black squares corners. The width variable is the number of inner square corners of the calibration target
+width: 8
+# The scale to the box size
+box size scale: 0.01
+# Flag to test if the file was correct
+is_ok: 1
+#Camera names
+cams: ['cam0', 'cam1']
+#Image file indexes
+cam indexes: [[1, 2],[3, 4]]
+# Positions file name
+positions file name: positions.csv
